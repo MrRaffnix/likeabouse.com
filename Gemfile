@@ -10,6 +10,7 @@ gem 'heroku'
 gem 'thin'
 
 gem 'activeadmin'
+gem 'seed-fu'
 
 
 # Gems used only for assets and not required
