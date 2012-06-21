@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %meta{:name => 'viewport', :content => 'maximum-scale=1.0'}
+    %title= @title
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application'
+  %body
+    %header
+      = render :partial => "shared/header"
+    #bodyer
+      .o
+        .c24
+          = yield
+    %footer
+      = render :partial => "shared/footer"
+    = render :partial => "shared/javascript"
