@@ -2,12 +2,14 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.6'
 gem 'mysql2'
-
+  
 gem 'haml'
 gem 'jquery-rails'
 gem 'sass-rails',   '~> 3.2.3'
 gem 'heroku'
 gem 'thin'
+
+gem 'activeadmin'
 
 
 # Gems used only for assets and not required
