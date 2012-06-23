@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.6'
 gem 'mysql2'
+gem 'mysql'
   
 gem 'haml'
 gem 'jquery-rails'
@@ -19,4 +20,8 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
   gem "therubyracer", '= 0.8.2'
+end
+
+group :development do
+  gem 'factory_girl_rails'
 end
