@@ -1,7 +1,7 @@
 LikeabouseCom::Application.routes.draw do
-  root :to => "posts#index", :only => [:show, :index]
+  root :to => "posts#index"
   
-  resources :posts
+  resources :posts, :only => [:show, :index]
   match "impressum" => "pages#impressum", as: "impressum"
 
   ActiveAdmin.routes(self)

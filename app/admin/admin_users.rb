@@ -7,6 +7,17 @@ ActiveAdmin.register AdminUser do
     default_actions
   end
   
+  show do
+    h3 admin_user.email
+    attributes_table do
+      row :email
+      row :current_sign_in_at
+      row :last_sign_in_at
+      row :sign_in_count
+    end
+    active_admin_comments
+  end
+  
   form do |f|
     f.inputs "Admin Details" do
       f.input :email
