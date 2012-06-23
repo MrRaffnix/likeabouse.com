@@ -22,6 +22,12 @@ group :assets do
   gem "therubyracer", '= 0.8.2'
 end
 
-group :development do
+group :development, :test do
+  gem 'rspec'
+  gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'ffaker'
+end
+
+group :production do
 end
