@@ -5,6 +5,9 @@
     .cat_headline
       %h2= cat.name
     - cat.posts.each do |post|
-      = post.name
+      .c4
+        = post.name
+      .c20
+        = post.link
       %br
     %br
