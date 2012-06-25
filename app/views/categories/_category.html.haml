@@ -1,0 +1,10 @@
+%h2.category_headline= category.name
+%table
+  %thead
+    %tr
+      %td Link
+      %td Name
+      %td Description
+    %tbody
+      = render partial: "categories/post", collection: category.posts.recent.top10
+.read_more= link_to "Read more...", "#"

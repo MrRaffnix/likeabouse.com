@@ -1,7 +1,6 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.all
-    @posts = Post.all
+    @categories = Category.ordered.with_posts.all
   end
   
   def show

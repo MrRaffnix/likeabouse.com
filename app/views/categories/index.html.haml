@@ -1,13 +1,4 @@
 #home
   %p
     Find useful web stuff
-  - @categories.each do |cat|
-    .cat_headline
-      %h2= cat.name
-    - cat.posts.each do |post|
-      .c4
-        = post.name
-      .c20
-        = post.link
-      %br
-    %br
+    = render partial: "categories/category", collection: @categories
