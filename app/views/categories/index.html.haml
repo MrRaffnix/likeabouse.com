@@ -1,0 +1,10 @@
+#home
+  %p
+    Find useful web stuff
+  - @categories.each do |cat|
+    .cat_headline
+      %h2= cat.name
+    - cat.posts.each do |post|
+      = post.name
+      %br
+    %br
