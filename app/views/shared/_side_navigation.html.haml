@@ -1,0 +1,5 @@
+.side_navigation
+  %h2 Categories
+  - @categories.each do |cat|
+    .nav_element
+      = link_to cat.name, "#"
