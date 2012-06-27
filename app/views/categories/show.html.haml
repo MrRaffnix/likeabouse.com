@@ -1,0 +1,6 @@
+#category
+  %h1= @category.name
+  %p= @category.description
+  .pagination= paginate(@posts)
+  .list= render partial: "categories/posts", object: @posts
+  .pagination= paginate(@posts)

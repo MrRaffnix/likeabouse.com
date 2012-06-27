@@ -200,6 +200,7 @@ DEPENDENCIES
   haml
   heroku
   jquery-rails
+  kaminari
   mysql
   mysql2
   rails (= 3.2.6)

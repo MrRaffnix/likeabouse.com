@@ -7,4 +7,5 @@ class Post < ActiveRecord::Base
   
   scope :recent, order: "created_at DESC"
   scope :top10, limit: 10
+  scope :by_category, lambda { |category_id| where(category_id: category_id) }
 end

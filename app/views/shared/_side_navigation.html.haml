@@ -1,5 +1,5 @@
-.side_navigation
+%nav.side_navigation
   %h2 Categories
-  - @categories.each do |cat|
+  - for category in Category.ordered.all
     .nav_element
-      = link_to cat.name, "#"
+      = link_to category.name, category_path(category)

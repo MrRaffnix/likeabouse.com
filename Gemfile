@@ -10,6 +10,7 @@ gem 'sass-rails',   '~> 3.2.3'
 gem 'heroku'
 gem 'thin'
 
+gem 'kaminari'
 gem 'activeadmin'
 gem 'seed-fu'
 

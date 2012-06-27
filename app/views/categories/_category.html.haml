@@ -1,9 +1,0 @@
-%h2= category.name
-%table.posts
-  %thead
-    %tr
-      %td Link
-      %td Details
-    %tbody
-      = render partial: "categories/post", collection: category.posts.recent.top10
-.read_more= link_to "Read more...", "#"
