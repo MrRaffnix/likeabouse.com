@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-  attr_accessible :name, :description
+  attr_accessible :name, :description, :rank
   has_many :posts
   
   validate :name,   presence: true
@@ -7,4 +7,8 @@ class Category < ActiveRecord::Base
   
   scope :ordered, order: "rank ASC"
   scope :with_posts, includes(:posts)
+  
+  def no_posts?
+    posts.empty?
+  end
 end
