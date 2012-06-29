@@ -4,7 +4,9 @@ class CategoriesController < ApplicationController
   end
   
   def show
-    @category = Category.find_by_id(params[:id])
-    @posts    = Post.by_category(@category.id).recent.page(params[:page] || 1)
+    @category_id = params[:id].to_i
+    
+    @category = Category.find_by_id(@category_id)
+    @posts    = Post.by_category(@category_id).recent.page(params[:page] || 1)
   end
 end
