@@ -28,6 +28,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'ffaker'
+  gem 'simplecov', :require => false, :group => :test 
 end
 
 group :production do
