@@ -8,3 +8,6 @@ config/database.yml
 
 #Mac specific
 .DS_Store
+
+#for SimpleCov
+coverage
