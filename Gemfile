@@ -21,6 +21,8 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
   gem "therubyracer", '= 0.8.2'
+  gem 'sprite-factory', '>= 1.4.0'
+  gem 'chunky_png'
 end
 
 group :development, :test do
