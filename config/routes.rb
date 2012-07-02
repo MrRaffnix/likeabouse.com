@@ -4,7 +4,8 @@ LikeabouseCom::Application.routes.draw do
   resources :posts, :only => [:show, :index]
   resources :categories, :only => [:show, :index]
   
-  match "impressum" => "pages#impressum", as: "impressum"
+  match "impressum" => "pages#imprint", as: "imprint"
+  match "imprint" => "pages#imprint", as: "imprint"
 
   ActiveAdmin.routes(self)
 

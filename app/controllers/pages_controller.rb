@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
-  def impressum
-    render template: "shared/impressum"
-  end
   
+  def imprint
+    render template: "shared/imprint"
+  end
 end
