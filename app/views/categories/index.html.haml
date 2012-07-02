@@ -1,7 +1,7 @@
 #home
   - for category in @categories
     .category{id: dom_id(category)}
-      %h2= category.name
+      %h3= category.name
       - if category.no_posts?
         %p No Posts for this category
       - else
