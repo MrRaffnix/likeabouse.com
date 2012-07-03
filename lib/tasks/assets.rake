@@ -13,20 +13,20 @@ namespace :assets do
       sass_path   = File.join(css_path, "_#{iconsize}.sass")
       sprite_path = File.join(icon_path, "#{iconsize}.png")
       
-      SpriteFactory.run!(path, sprite_factory_options(sass_path, sprite_path, "#{iconsize}_"))
+      SpriteFactory.run!(path, sprite_factory_options(sass_path, sprite_path, ".#{iconsize}_", "iconset/"))
       p "I am done with: #{iconsize}"
     end
   end
 end
 
-def sprite_factory_options(css_path, image_path, prefix)
+def sprite_factory_options(css_path, image_path, css_prefix, path_icon)
   options = {
     library: :chunkypng,
     layout: :packed,
     style: :sass,
-    csspath: "image_url('$IMAGE')",
+    csspath: "'#{path_icon}$IMAGE'",
     output_style: css_path,
     output_image: image_path,
-    selector: prefix
+    selector: css_prefix
   }
 end
