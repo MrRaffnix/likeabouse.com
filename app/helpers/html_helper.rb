@@ -7,4 +7,21 @@ module HtmlHelper
   def active_class(condition, klass = "")
     condition ? "#{klass} active".strip : klass
   end
+  
+  def tiny_tag(name)
+    sprite_tag "tiny", name
+  end
+  
+  def minor_tag(name)
+    sprite_tag "minor", name
+  end
+  
+  def medium_tag(name)
+    sprite_tag "medium", name
+  end
+  
+  def sprite_tag(size, name)
+    content_tag :div, "&nbsp;".html_safe, class: "#{size}_#{name} #{size}"
+  end
+  
 end

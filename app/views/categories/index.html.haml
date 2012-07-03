@@ -6,4 +6,7 @@
         %p No Posts for this category
       - else
         = render partial: "categories/posts", object: category.posts.recent.top10
-        .read_more= link_to "Read more...", category_path(category)
+        .read_more
+          = link_to minor_tag("search"), category_path(category), title: "More..."
+    .clearer
+              
