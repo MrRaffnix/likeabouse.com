@@ -23,5 +23,4 @@ module HtmlHelper
   def sprite_tag(size, name)
     content_tag :div, "&nbsp;".html_safe, class: "#{size}_#{name} #{size}"
   end
-  
 end
