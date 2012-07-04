@@ -6,6 +6,7 @@ LikeabouseCom::Application.routes.draw do
   
   match "impressum" => "pages#imprint", as: "imprint"
   match "imprint" => "pages#imprint", as: "imprint"
+  match "about" => "pages#about", as: "about"
 
   ActiveAdmin.routes(self)
 
