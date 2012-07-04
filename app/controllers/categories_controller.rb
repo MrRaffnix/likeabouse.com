@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  layout 'with_side_menu'
+  
   def index
     @categories = Category.ordered.with_posts.all
   end

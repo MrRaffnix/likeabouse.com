@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    = render partial: "shared/head"
+  %body
+    %header
+      = render :partial => "shared/header"
+    #bodyer
+      .o
+        .c3.l.side_menu
+          = render :partial => "shared/side_navigation"
+        .c21.lr.content
+          = yield
+    %footer
+      = render :partial => "shared/footer"
+    = render :partial => "shared/javascript"
