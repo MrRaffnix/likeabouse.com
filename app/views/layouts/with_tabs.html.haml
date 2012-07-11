@@ -1,0 +1,18 @@
+!!!
+%html{class: "no-js"}
+  %head
+    = render partial: "shared/head"
+    = stylesheet_link_tag "http://code.jquery.com/ui/1.8.21/themes/base/jquery-ui.css"
+    = stylesheet_link_tag "http://static.jquery.com/ui/css/demo-docs-theme/ui.theme.css"
+  %body
+    %header
+      = render :partial => "shared/header"
+    #bodyer
+      .o
+        .c24
+          #tabs.ui-tabs
+            = yield :tabs
+            = yield
+    %footer
+      = render :partial => "shared/footer"
+    = render :partial => "shared/javascript"

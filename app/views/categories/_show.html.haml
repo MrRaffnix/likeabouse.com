@@ -1,0 +1,8 @@
+.category.detail{id: dom_id(category)}
+  %h3= category.name
+  %p= category.description
+  - if posts.empty?
+    %p No Posts for this category
+  - else
+    .list= render partial: "categories/posts", object: posts
+    .pagination= paginate(posts, remote: true)
