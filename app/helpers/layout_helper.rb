@@ -1,6 +1,6 @@
 module LayoutHelper
   def datetime_string datetime
-    datetime.strftime "%Y-%m-%d, %H:%M"
+    datetime.strftime "%d.%m.%y, %H:%M"
   end
   
   def ajax_tab_link(name, link)

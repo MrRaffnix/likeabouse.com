@@ -6,7 +6,7 @@ class @Tabber
   
   loadConfig: ->
     config = 
-      selected: @informationElement().attr "data-selected-tab"
+      selected: parseInt(@informationElement().attr "data-selected-tab")
   
   startElement: ->
     $(@selector)

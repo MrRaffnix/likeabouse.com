@@ -1,0 +1,1 @@
+$("#<%= dom_id(category) %>").html("<%= escape_javascript(render :partial => 'categories/show', :locals => {:category => category, :posts => posts} )%>")
