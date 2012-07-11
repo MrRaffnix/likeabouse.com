@@ -1,9 +1,4 @@
-.category.detail{id: dom_id(@category)}
-  %h3= @category.name
-  %p= @category.description
-  - if @posts.empty?
-    %p No Posts for this category
-  - else
-    .pagination= paginate(@posts)
-    .list= render partial: "categories/posts", object: @posts
-    .pagination= paginate(@posts)
+- content_for :tabs do
+  = render partial: "categories/tabs", locals: {categories: @categories}
+  
+#tab_information{"data-selected-tab" => @selected_tab}

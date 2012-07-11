@@ -1,10 +1,9 @@
 LikeabouseCom::Application.routes.draw do
-  root :to => "categories#index"
+  root :to => "posts#recent"
   
   resources :posts, :only => [:show, :index]
   resources :categories, :only => [:show, :index]
   
-  match "impressum" => "pages#imprint", as: "imprint"
   match "imprint" => "pages#imprint", as: "imprint"
   match "about" => "pages#about", as: "about"
 
