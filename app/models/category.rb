@@ -8,7 +8,15 @@ class Category < ActiveRecord::Base
   scope :ordered, order: "rank ASC"
   scope :with_posts, includes(:posts)
   
+  def self.to_show
+    self.ordered.all.select do |category|
+      !category.no_posts?
+    end
+  end
+  
   def no_posts?
     posts.empty?
   end
+  
+  
 end

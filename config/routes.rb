@@ -1,11 +1,16 @@
 LikeabouseCom::Application.routes.draw do
   root :to => "posts#recent"
-  
-  resources :posts, :only => [:show, :index]
-  resources :categories, :only => [:show, :index]
-  
   match "imprint" => "pages#imprint", as: "imprint"
   match "about" => "pages#about", as: "about"
+  
+  resources :posts, :only => [:show] do
+    collection do
+      get 'recent'
+    end
+  end
+  
+  resources :categories, :only => [:show]
+  
 
   ActiveAdmin.routes(self)
 

@@ -10,4 +10,4 @@ config/database.yml
 .DS_Store
 
 #for SimpleCov
-coverage
+coverage/

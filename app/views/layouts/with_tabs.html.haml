@@ -11,7 +11,7 @@
       .o
         .c24
           #tabs.ui-tabs
-            = yield :tabs
+            = render partial: "shared/tabs", locals: { categories: (@categories || Category.to_show) }
             = yield
     %footer
       = render :partial => "shared/footer"

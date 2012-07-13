@@ -1,8 +1,0 @@
-#home
-  - for category in @categories
-    - next if category.no_posts?
-    .category{id: dom_id(category)}
-      %h2.text_black= category.name
-      = link_to minor_tag("zoom_in"), category_path(category), title: "More...", class: "read_more"
-      = render partial: "categories/posts", object: category.posts.recent.top10
-              
