@@ -1,12 +1,16 @@
 #bodyer
   margin-top: 85px
   min-height: 500px
-  background-image: image_url('photos/background.jpg')
-  background-repeat: no-repeat
+  background-image: image_url('photos/background_kachel2.png')
   
-  .ui-widget-content 
-    background-color: transparent
+  .ui-widget-content
     border: none
+    background: none
+    background-color: transparent !important    
+  .tabs
+    .ui-widget-content
+      background-color: transparent !important
+  
   .ui-widget-header
     background: none
   
@@ -27,7 +31,7 @@
         font-style: italic
         font-weight: bold
         color: $black
-      
+  
   tbody
     tr
       td
