@@ -1,8 +1,9 @@
 .o
   .c24
     .c20
-      = link_to "Impressum", imprint_path
-      = link_to "About Us", about_path
+      %ul
+        %li= link_to "Impressum", imprint_path
+        %li= link_to "About Us", about_path
     .c4
       Icons by
       = link_to "DryIcons", "http://dryicons.com", target: '_blank'

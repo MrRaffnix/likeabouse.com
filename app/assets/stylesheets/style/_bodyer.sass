@@ -1,7 +1,14 @@
 #bodyer
   margin-top: 85px
   min-height: 500px
-  background-color: $white
+  background-image: image_url('photos/background.jpg')
+  background-repeat: no-repeat
+  
+  .ui-widget-content 
+    background-color: transparent
+    border: none
+  .ui-widget-header
+    background: none
   
   .category
     margin-bottom: 15px
@@ -21,17 +28,18 @@
         font-weight: bold
         color: $black
       
-      tbody
-        tr
-          td
-            a
-              color: $red1
-            
-            &.link
-              font-size: 14px
-              color: $black2
-              width: 200px
-          
-            &.description
-              font-size: 9px
-              color: $gray
+  tbody
+    tr
+      td
+        a
+          color: $red1
+        
+        &.link
+          font-size: 14px
+          color: $black2
+          width: 200px
+      
+        &.description
+          font-size: 11px
+          color: $gray
+          width: 500px
