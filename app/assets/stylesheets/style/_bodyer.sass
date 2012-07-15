@@ -1,51 +1,86 @@
 #bodyer
   margin-top: 85px
   min-height: 500px
-  background-image: image_url('photos/background_kachel2.png')
+  background-image: image_url('misc/background_kachel2.png')
   
-  .ui-widget-content
-    border: none
-    background: none
-    background-color: transparent !important    
-  .tabs
-    .ui-widget-content
-      background-color: transparent !important
-  
-  .ui-widget-header
-    background: none
-  
-  .category
-    margin-bottom: 15px
-    
-    h2
-      float: left
-    a.read_more
-      padding-left: 10px
-      float: left
-    
-    table.posts
-      width: 100%
-      margin: 0
-    
-      thead tr td
-        font-style: italic
-        font-weight: bold
-        color: $black
-  .pagination_infos
-    margin-top: 15px
-
-  tbody
-    tr
-      td
-        a
-          color: $red1
-        
-        &.link
-          font-size: 14px
-          color: $black2
-          width: 200px
+  .ui-tabs  
+    .ui-widget-header
+      background: none
       
-        &.description
-          font-size: 11px
-          color: $gray
-          width: 500px
+      .ui-tabs-selected
+        border-color: #595959
+        border-width: 2px
+  
+  
+  .posts
+    table
+      tr
+        width: 100%
+        td
+          width: 200px
+          
+          a
+            text-decoration: none
+            color: $red1
+            
+            &:hover
+              text-decoration: underline
+          
+          &.name
+            width: 500px
+            
+            .description, .link
+              display: block
+            
+            .description
+              font-size: 80% 
+          
+          &.link
+            width: 200px
+          
+          &.description
+            width: 500px
+          
+          &.created, &.category
+            width: 100px  
+            
+          &.category
+            a
+              color: $gray
+              font-style: italic
+              
+              &:hover
+                text-decoration: underline
+  
+  // .category
+  //   margin-bottom: 15px
+  //   a.read_more
+  //     padding-left: 10px
+  //     float: left
+  //   
+  //   table.posts
+  //     width: 100%
+  //     margin: 0
+  //   
+  //     thead tr td
+  //       font-style: italic
+  //       font-weight: bold
+  //       color: $black
+  // .pagination_infos
+  //   margin-top: 15px
+  // 
+  // tbody
+  //   tr
+  //     td
+  //       a
+  //         color: $red1
+  //       
+  //       &.link
+  //         font-size: 14px
+  //         color: $black2
+  //         width: 200px
+  //     
+  //       &.description
+  //         font-size: 11px
+  //         color: $gray
+  //         width: 500px

@@ -1,4 +1,5 @@
 %tr{id: dom_id(post)}
-  %td.link= link_to_blank post.name, post.link
-  %td.description= post.description
+  %td.name
+    %span.link= link_to_blank post.name, post.link
+    %span.description= post.description
   %td.created= post_information post

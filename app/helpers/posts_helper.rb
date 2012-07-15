@@ -14,7 +14,11 @@ module PostsHelper
 
   def author_of_post post
     if post.author.present?
-      post.author.email.gsub(/@.*/, "")
+      if post.first_name.present?
+        post.author.first_name
+      else
+        post.author.email.gsub(/@.*/, "")
+      end
     end
   end
 end
