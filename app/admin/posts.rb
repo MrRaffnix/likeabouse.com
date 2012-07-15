@@ -1,8 +1,8 @@
 ActiveAdmin.register Post do
   menu :priority => 1
-  
+
   scope :all
-  
+
   index do
     column :name
     column :description
@@ -11,7 +11,7 @@ ActiveAdmin.register Post do
     column :author
     default_actions
   end
-  
+
   form do |f|
     f.inputs "Post Details" do
       f.input :link, :required => true

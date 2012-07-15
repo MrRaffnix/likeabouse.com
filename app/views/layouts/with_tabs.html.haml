@@ -14,5 +14,5 @@
             = render partial: "shared/tabs", locals: { categories: (@categories || Category.to_show) }
             = yield
     %footer
-      = render :partial => "shared/footer"
-    = render :partial => "shared/javascript"
+      = render partial: "shared/footer"
+    = render partial: "shared/javascript"

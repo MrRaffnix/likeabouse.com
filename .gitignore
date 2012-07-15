@@ -11,3 +11,5 @@ config/database.yml
 
 #for SimpleCov
 coverage/
+
+rails_best_practices_output.html

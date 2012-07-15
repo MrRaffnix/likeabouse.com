@@ -4,10 +4,10 @@
     = render partial: "shared/head"
   %body
     %header
-      = render :partial => "shared/header"
+      = render partial: "shared/header"
     #bodyer
       .o
         = yield
     %footer
-      = render :partial => "shared/footer"
-    = render :partial => "shared/javascript"
+      = render partial: "shared/footer"
+    = render partial: "shared/javascript"

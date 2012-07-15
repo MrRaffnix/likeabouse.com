@@ -5,14 +5,14 @@ namespace :assets do
   task :resprite => :environment do
     icon_path = File.join Rails.root, "app", "assets", "images", "iconset"
     css_path = File.join Rails.root, "app", "assets", "stylesheets", "iconset"
-    
+
     ["tiny", "minor", "small", "medium", "big", "large"].each do |iconsize|
       p "generating sprites for iconset: #{iconsize}"
       path = File.join(icon_path, iconsize)
-      
+
       sass_path   = File.join(css_path, "_#{iconsize}.sass")
       sprite_path = File.join(icon_path, "#{iconsize}.png")
-      
+
       SpriteFactory.run!(path, sprite_factory_options(sass_path, sprite_path, ".#{iconsize}_", "iconset/"))
       p "I am done with: #{iconsize}"
     end
