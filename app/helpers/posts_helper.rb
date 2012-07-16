@@ -5,19 +5,26 @@ module PostsHelper
   end
 
   def post_information post
+    post_information = content_tag :span, datetime_string(post.created_at), class: "date"
+    
     author = author_of_post post
-    post_information = datetime_string post.created_at
-    post_information = "#{post_information}, by #{author}" if author.present?
-
-    post_information
+    author_information = if author.present?
+      span = content_tag :span, "by #{author}", class: "author"
+      " #{span}"
+    else
+      ""
+    end
+    
+    "#{post_information}#{author_information}".html_safe
   end
 
   def author_of_post post
-    if post.author.present?
-      if post.first_name.present?
-        post.author.first_name
+    author = post.author
+    if author.present?
+      if author.first_name.present?
+        author.first_name
       else
-        post.author.email.gsub(/@.*/, "")
+        author.email.gsub(/@.*/, "")
       end
     end
   end

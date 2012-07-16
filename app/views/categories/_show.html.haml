@@ -3,5 +3,4 @@
     %p No Posts for this category
   - else
     .page.posts= render partial: "categories/posts", object: posts
-    .pagination= paginate(posts, remote: true, params: {pagination: 1})
-    .pagination_infos= page_entries_info(posts).html_safe
+    = bouse_pagination posts

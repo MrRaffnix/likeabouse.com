@@ -3,28 +3,17 @@
   min-height: 500px
   background-image: image_url('misc/background_kachel2.png')
   
-  .ui-tabs  
-    .ui-widget-header
-      background: none
-      
-      .ui-tabs-selected
-        border-color: #595959
-        border-width: 2px
-  
-  
   .posts
     table
+      margin: 0
+      
       tr
         width: 100%
         td
           width: 200px
           
           a
-            text-decoration: none
             color: $red1
-            
-            &:hover
-              text-decoration: underline
           
           &.name
             width: 500px
@@ -33,54 +22,30 @@
               display: block
             
             .description
-              font-size: 80% 
+              font-size: 70% 
           
           &.link
             width: 200px
           
           &.description
-            width: 500px
+            width: 600px
           
-          &.created, &.category
-            width: 100px  
+          &.created
+            width: 130px
+            
+            .date
+              display: block
+              font-size: 90%
+              color: $gray
+            
+            .author
+              display: inline-block
+              font-size: 80%
+              font-style: italic
+              color: $red1
             
           &.category
+            width: 100px
             a
               color: $gray
               font-style: italic
-              
-              &:hover
-                text-decoration: underline
-  
-  // .category
-  //   margin-bottom: 15px
-  //   a.read_more
-  //     padding-left: 10px
-  //     float: left
-  //   
-  //   table.posts
-  //     width: 100%
-  //     margin: 0
-  //   
-  //     thead tr td
-  //       font-style: italic
-  //       font-weight: bold
-  //       color: $black
-  // .pagination_infos
-  //   margin-top: 15px
-  // 
-  // tbody
-  //   tr
-  //     td
-  //       a
-  //         color: $red1
-  //       
-  //       &.link
-  //         font-size: 14px
-  //         color: $black2
-  //         width: 200px
-  //     
-  //       &.description
-  //         font-size: 11px
-  //         color: $gray
-  //         width: 500px

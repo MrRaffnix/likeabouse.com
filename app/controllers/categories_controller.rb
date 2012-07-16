@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
     @category_id  = params[:id].to_i
 
     @category = Category.find_by_id(@category_id)
-    @posts    = Post.by_category(@category_id).recent.page(params[:page] || 1).per(12)
+    @posts    = Post.by_category(@category_id).recent.page(params[:page] || 1).per(10)
 
     if request.xhr?
       if params[:pagination].present?

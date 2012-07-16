@@ -7,6 +7,11 @@ module HtmlHelper
   def active_class(condition, klass = "")
     condition ? "#{klass} active".strip : klass
   end
+  
+  def bouse_pagination(objects)
+    paginate(objects, remote: true, params: {pagination: 1}, theme: 'bouse')
+  end
+  
 
   def tiny_tag(name)
     sprite_tag "tiny", name
