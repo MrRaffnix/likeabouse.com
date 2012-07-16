@@ -3,8 +3,8 @@ module LayoutHelper
     datetime.strftime "%d.%m.%y, %H:%M"
   end
 
-  def ajax_tab_link(name, link)
-    link_to link do
+  def ajax_tab_link(name, link, tab_index)
+    link_to link, {"data-tab-index" => tab_index} do
       content_tag :span, name
     end
   end

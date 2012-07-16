@@ -1,7 +1,7 @@
 module PostsHelper
 
   def link_to_category category
-    link_to category.name, category_path(category)
+    link_to category.name, category_path(category), {:class => "jq_category_link", "data-tab-index" => category.id}
   end
 
   def post_information post
