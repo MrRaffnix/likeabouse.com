@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.6'
+gem 'rails', '3.2.8'
 gem 'mysql2'
 gem 'mysql'
   
@@ -30,8 +30,11 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'ffaker'
-  gem 'simplecov', :require => false, :group => :test
   gem 'rails_best_practices'
+end
+
+group :test do
+  gem 'simplecov', :require => false
 end
 
 group :production do

@@ -9,7 +9,7 @@ class Category < ActiveRecord::Base
   scope :with_posts, includes(:posts)
 
   def self.to_show
-    self.ordered.all.select do |category|
+    self.ordered.with_posts.all.select do |category|
       !category.no_posts?
     end
   end
