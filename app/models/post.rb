@@ -9,4 +9,5 @@ class Post < ActiveRecord::Base
   scope :top10, limit: 10
   scope :top, lambda { |l| limit(l) }
   scope :by_category, lambda { |category_id| where(category_id: category_id) }
+
 end
