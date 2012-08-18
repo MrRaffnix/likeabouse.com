@@ -1,11 +1,7 @@
 describe PostsController do
-  describe "GET index" do
+  describe "GET recent" do
     it "shuld be success" do
-      get :index
-      response.should be_success
-    end
-    it "shuld be success" do
-      get :show, id: 1
+      get :recent
       response.should be_success
     end
   end
