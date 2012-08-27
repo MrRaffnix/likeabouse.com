@@ -1,5 +1,5 @@
 ActiveAdmin.register Post do
-  menu :priority => 1
+  menu priority: 1
 
   scope :all
 
@@ -14,11 +14,11 @@ ActiveAdmin.register Post do
 
   form do |f|
     f.inputs "Post Details" do
-      f.input :link, :required => true
-      f.input :name, :required => true
-      f.input :description, :required => true
-      f.input :category, :required => true
-      f.input :author, :required => true, :collection => Hash[AdminUser.all.map{|u| [u.email,u.id]}]
+      f.input :link, required: true
+      f.input :name, required: true
+      f.input :description, required: true
+      f.input :category, required: true
+      f.input :author, required: true, :collection => Hash[AdminUser.all.map{|u| [u.email,u.id]}]
     end
     f.buttons
   end

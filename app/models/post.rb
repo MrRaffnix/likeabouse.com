@@ -6,7 +6,6 @@ class Post < ActiveRecord::Base
   validate :name, :description, :link, :category_id, :author_id, presence: true
 
   scope :recent, order: "created_at DESC"
-  scope :top10, limit: 10
   scope :top, lambda { |l| limit(l) }
   scope :by_category, lambda { |category_id| where(category_id: category_id) }
 
