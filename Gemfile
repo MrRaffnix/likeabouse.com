@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.8'
 gem 'mysql2'
 gem 'mysql'
-  
+
 gem 'haml'
 gem 'jquery-rails'
 gem 'sass-rails',   '~> 3.2.3'
@@ -11,7 +11,7 @@ gem 'heroku'
 gem 'thin'
 
 gem 'kaminari'
-gem 'activeadmin'
+gem 'activeadmin', '~> 0.5.0'
 gem 'seed-fu'
 
 
