@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'capistrano'
+gem 'rvm-capistrano'
+
 gem 'rails', '3.2.8'
 gem 'mysql2'
 gem 'mysql'
