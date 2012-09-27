@@ -26,3 +26,5 @@ namespace :deploy do
     run "ln -nfs #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
   end
 end
+
+require "capistrano-unicorn"
