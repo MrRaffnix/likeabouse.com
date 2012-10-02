@@ -1,5 +1,4 @@
 module PostsHelper
-
   def link_to_category category
     link_to category.name, category_path(category), {:class => "jq_category_link", "data-tab-index" => category.id}
   end
@@ -13,7 +12,8 @@ module PostsHelper
 
   def truncate_link(link)
     return "-" if link.nil?
-    truncate(link.gsub("https://", "").gsub("http://", ""), length: 60)
+
+    truncate(link.gsub("https://", "").gsub("http://", ""), length: 45)
   end
 
 
@@ -36,7 +36,7 @@ module PostsHelper
       if author.first_name.present?
         author.first_name
       else
-        author.email.gsub(/@.*/, "")
+        author.email.gsub(/@.*/, "").titleize
       end
     end
   end
