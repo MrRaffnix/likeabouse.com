@@ -1,11 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'capistrano'
-gem 'rvm-capistrano'
-gem 'capistrano-unicorn', :require => false
-
-gem 'unicorn'
-
 gem 'rails', '3.2.8'
 gem 'mysql2'
 gem 'mysql'
@@ -20,6 +14,11 @@ gem 'kaminari'
 gem 'activeadmin', '~> 0.5.0'
 gem 'seed-fu'
 
+gem 'capistrano'
+gem 'rvm-capistrano'
+gem 'capistrano-unicorn', :require => false
+
+gem 'unicorn'
 
 # Gems used only for assets and not required
 # in production environments by default.
