@@ -39,6 +39,10 @@ group :development, :test do
   gem 'rails_best_practices'
 end
 
+group :development do
+  gem 'bundle_outdated'
+end
+
 group :test do
   gem 'simplecov', :require => false
 end
