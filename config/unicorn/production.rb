@@ -1,11 +1,11 @@
-app_path = "/home/wopi/www/likeabouse.com/current"
+app_path = "/home/angelo/www/likeabouse.com/current"
 
 worker_processes 1
 preload_app true
 timeout 180
 listen "127.0.0.1:8091"
 
-user 'wopi', 'wopi'
+user 'angelo', 'angelo'
 
 working_directory app_path
 
