@@ -11,7 +11,7 @@ set :branch, 'master'
 set :scm_verbose, true
 
 set :application, "likeabouse"
-set :repository,  "git://github.com/astropanic/likeabouse.com.git"
+set :repository,  "git://github.com/likeabouse/likeabouse.com.git"
 set :deploy_to, "~/www/likeabouse.com/"
 
 role :web, "bashman.org"
