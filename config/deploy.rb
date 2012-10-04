@@ -3,7 +3,7 @@ set :rvm_ruby_string, '1.9.3-p125@likeabouse.com'
 require "bundler/capistrano"
 require "rvm/capistrano"
 
-set :user, 'wopi'
+set :user, 'angelo'
 set :use_sudo, false
 
 set :scm, :git
