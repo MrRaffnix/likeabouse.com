@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  layout "with_tabs"
+  layout "application"
 
   respond_to :rss, :only => [:feed]
   respond_to :html, :only => [:recent]
@@ -11,7 +11,6 @@ class PostsController < ApplicationController
       render partial: "posts/index", locals: {posts: @posts}
     else
       @categories = Category.to_show
-      @js_files   = ["tabs"]
 
       render "posts/recent"
     end

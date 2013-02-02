@@ -7,6 +7,3 @@
 
 /* custom lib */
 //= require active_admin
-
-/* object */
-//= require objects/tabber

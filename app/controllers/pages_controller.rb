@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  layout "full"
+  layout "application"
 
   def imprint
     render 'shared/imprint'
