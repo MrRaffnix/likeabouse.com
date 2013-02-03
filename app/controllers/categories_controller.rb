@@ -14,10 +14,8 @@ class CategoriesController < ApplicationController
         render partial: "categories/show", locals: {category: @category, posts: @posts}
       end
     else
-      @selected_tab = @categories.map(&:id).index(@category_id)
       @categories   = Category.to_show
 
-      @js_files     = ["tabs"]
       render :show
     end
   end

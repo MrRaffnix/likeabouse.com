@@ -248,28 +248,28 @@ PLATFORMS
 DEPENDENCIES
   activeadmin (~> 0.5.0)
   bundle_outdated
-  capistrano
+  capistrano (= 2.14.1)
   capistrano-unicorn
   chunky_png
   coffee-rails (~> 3.2.1)
   factory_girl_rails
   ffaker
   haml
-  heroku
+  heroku (= 2.34.0)
   jquery-rails
-  kaminari
-  mysql
-  mysql2
+  kaminari (= 0.14.1)
+  mysql (= 2.9.0)
+  mysql2 (= 0.3.11)
   rails (= 3.2.11)
   rails_best_practices
   rspec
   rspec-rails
-  rvm-capistrano
+  rvm-capistrano (= 1.2.7)
   sass-rails (~> 3.2.3)
   seed-fu
   simplecov
   sprite-factory (>= 1.4.0)
   therubyracer (= 0.9.4)
-  thin
+  thin (= 1.5.0)
   uglifier (>= 1.0.3)
-  unicorn
+  unicorn (= 4.5.0)

@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
-gem 'mysql2', '2.9.0'
-gem 'mysql', '0.3.11'
+gem 'mysql2', '0.3.11'
+gem 'mysql', '2.9.0'
 
 gem 'haml'
 gem 'jquery-rails'

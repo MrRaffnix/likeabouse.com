@@ -1,7 +1,16 @@
-.span4  
+.span3  
   .logo
     = link_to image_tag(asset_path("logo_transparent_small.png")), root_path
-.span8 
+.span2
+  .categories
+    - @categories[0..3].each do |category|
+      .category= link_to category.name, category
+.span2
+  .categories
+    - @categories[4..8].each do |category|
+      .category= link_to category.name, category
+
+.span5
   .social
     = link_to image_tag('misc/twitter.png'), 'https://twitter.com/#!/Like_a_bouse', target: '_blank'
     = link_to image_tag('misc/facebook.png'), 'https://www.facebook.com/pages/Likeabouse/258771540888972', target: '_blank'

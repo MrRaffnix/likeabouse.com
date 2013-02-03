@@ -5,7 +5,8 @@ class PostsController < ApplicationController
   respond_to :html, :only => [:recent]
 
   def index
-    @posts = Post.top(10)
+    @posts = Post.page(params[:page]).per(12)
+    @categories = Category.to_show
   end
 
   def recent

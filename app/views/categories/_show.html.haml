@@ -1,6 +1,0 @@
-.category.detail{id: dom_id(category)}
-  - if posts.empty?
-    %p No Posts for this category
-  - else
-    .page.posts= render partial: "categories/posts", object: posts
-    = bouse_pagination posts

@@ -7,5 +7,3 @@
           .date= post.created_at.strftime("%d.%m.%Y %H:%M")
           .description= post.description
           .link= link_to truncate(post.link, length: 40), target: "_blank"
-
-= paginate @posts
