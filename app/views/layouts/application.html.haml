@@ -3,11 +3,11 @@
   %head
     = render partial: "shared/head"
   %body
-    %header
-      = render partial: "shared/header"
-    #bodyer
-      .o
-        = yield
-    %footer
-      = render partial: "shared/footer"
+    .container-fluid
+      .row-fluid
+        = render partial: "shared/header"
+      = yield
+      .row-fluid
+        %footer
+          = render partial: "shared/footer"
     = render partial: "shared/javascript"

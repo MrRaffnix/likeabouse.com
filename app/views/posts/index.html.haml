@@ -1,0 +1,9 @@
+- @posts.in_groups_of(4, false) do |row_posts| 
+  .row-fluid
+    - for post in row_posts
+      .span3
+        .post
+          .name= link_to post.name, post.link
+          .date= post.created_at.strftime("%d.%m.%Y %H:%M")
+          .description= post.description
+          .link= link_to truncate(post.link, length: 40)

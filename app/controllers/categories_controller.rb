@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  layout 'with_tabs'
+  layout 'application'
 
   def show
     @category_id  = params[:id].to_i

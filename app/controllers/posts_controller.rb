@@ -4,6 +4,10 @@ class PostsController < ApplicationController
   respond_to :rss, :only => [:feed]
   respond_to :html, :only => [:recent]
 
+  def index
+    @posts = Post.top(10)
+  end
+
   def recent
     @posts = Post.top(10).recent.all
 
