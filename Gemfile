@@ -1,24 +1,24 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
-gem 'mysql2'
-gem 'mysql'
+gem 'rails', '3.2.11'
+gem 'mysql2', '2.9.0'
+gem 'mysql', '0.3.11'
 
 gem 'haml'
 gem 'jquery-rails'
 gem 'sass-rails',   '~> 3.2.3'
-gem 'heroku'
-gem 'thin'
+gem 'heroku', '2.34.0'
+gem 'thin', '1.5.0'
 
-gem 'kaminari'
+gem 'kaminari', '0.14.1'
 gem 'activeadmin', '~> 0.5.0'
 gem 'seed-fu'
 
-gem 'capistrano'
-gem 'rvm-capistrano'
+gem 'capistrano', '2.14.1'
+gem 'rvm-capistrano', '1.2.7'
 gem 'capistrano-unicorn', :require => false
 
-gem 'unicorn'
+gem 'unicorn', '4.5.0'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -44,7 +44,4 @@ end
 
 group :test do
   gem 'simplecov', :require => false
-end
-
-group :production do
 end
