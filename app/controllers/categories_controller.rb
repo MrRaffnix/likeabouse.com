@@ -14,8 +14,6 @@ class CategoriesController < ApplicationController
         render partial: "categories/show", locals: {category: @category, posts: @posts}
       end
     else
-      @categories   = Category.to_show
-
       render :show
     end
   end

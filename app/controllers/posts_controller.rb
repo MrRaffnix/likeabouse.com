@@ -6,7 +6,6 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.page(params[:page]).per(12)
-    @categories = Category.to_show
   end
 
   def recent
@@ -15,8 +14,6 @@ class PostsController < ApplicationController
     if request.xhr?
       render partial: "posts/index", locals: {posts: @posts}
     else
-      @categories = Category.to_show
-
       render "posts/recent"
     end
   end
@@ -26,6 +23,5 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.rss {render :layout => false, :content_type => "application/rss"}
     end
-
   end
 end
