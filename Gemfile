@@ -44,6 +44,7 @@ group :development do
   gem 'bundle_outdated'
   gem 'bundler-audit'
   gem 'rails_best_practices'
+  gem 'quiet_assets'
 end
 
 group :test do
