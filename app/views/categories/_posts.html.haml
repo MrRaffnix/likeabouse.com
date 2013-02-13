@@ -1,2 +1,5 @@
-%table
-  %tbody= render partial: "categories/post", collection: posts
+- posts.in_groups_of(4, false) do |row_posts|
+  .row-fluid
+    - for post in row_posts
+      .span3
+        = render partial: "categories/post", object: post
