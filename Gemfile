@@ -2,9 +2,9 @@ source :rubygems
 
 gem 'rails', '3.2.12'
 gem 'mysql2', '0.3.11'
-gem 'mysql', '2.9.0'
+gem 'mysql', '2.9.1'
 
-gem 'haml', '~> 3.1.7'
+gem 'haml', '~> 4.0.0'
 gem 'jquery-rails', '2.2.1'
 gem 'jquery-ui-rails', '4.0.1'
 gem 'modernizr-rails', '2.6.2'

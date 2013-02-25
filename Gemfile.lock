@@ -91,7 +91,8 @@ GEM
     ffaker (1.15.0)
     formtastic (2.2.1)
       actionpack (>= 3.0)
-    haml (3.1.7)
+    haml (4.0.0)
+      tilt
     has_scope (0.5.1)
     highline (1.6.15)
     hike (1.2.1)
@@ -124,7 +125,7 @@ GEM
     mime-types (1.21)
     modernizr-rails (2.6.2)
     multi_json (1.6.0)
-    mysql (2.9.0)
+    mysql (2.9.1)
     mysql2 (0.3.11)
     net-scp (1.1.0)
       net-ssh (>= 2.6.5)
@@ -249,12 +250,12 @@ DEPENDENCIES
   coffee-rails (~> 3.2.2)
   factory_girl_rails
   ffaker
-  haml (~> 3.1.7)
+  haml (~> 4.0.0)
   jquery-rails (= 2.2.1)
   jquery-ui-rails (= 4.0.1)
   kaminari (= 0.14.1)
   modernizr-rails (= 2.6.2)
-  mysql (= 2.9.0)
+  mysql (= 2.9.1)
   mysql2 (= 0.3.11)
   quiet_assets
   rails (= 3.2.12)
