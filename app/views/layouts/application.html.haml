@@ -3,9 +3,10 @@
   %head
     = render partial: "shared/head"
   %body
-    .container-fluid#header
+    .container-fluid
       .row-fluid
-        = render partial: "shared/header"
+        #header
+          = render partial: "shared/header"
       = yield
       .row-fluid
         %footer
