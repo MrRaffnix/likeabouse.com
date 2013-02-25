@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   respond_to :html, :only => [:recent]
 
   def index
-    @posts = Post.page(params[:page]).per(12)
+    @posts = Post.order("created_at DESC").page(params[:page]).per(12)
   end
 
   def recent
