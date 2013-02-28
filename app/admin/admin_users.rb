@@ -1,4 +1,4 @@
-ActiveAdmin.register AdminUser do
+ActiveAdmin.register AdminUser, as: 'Bouses' do
   menu priority: 3
   scope :all
 
