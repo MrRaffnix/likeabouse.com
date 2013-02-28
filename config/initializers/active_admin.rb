@@ -1,5 +1,5 @@
 ActiveAdmin.setup do |config|
-
+  config.root_to = "posts#index"
   # == Site Title
   #
   # Set the title that is displayed on the main layout
