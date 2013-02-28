@@ -1,5 +1,4 @@
-set :rvm_ruby_string, '1.9.3-p125@likeabouse.com'
-
+set :rvm_ruby_string, '2.0.0-p0@likeabouse.com'
 require "bundler/capistrano"
 require "rvm/capistrano"
 
@@ -7,12 +6,12 @@ set :user, 'angelo'
 set :use_sudo, false
 
 set :scm, :git
-set :branch, 'master'
+set :branch, 'redesign'
 set :scm_verbose, true
 
-set :application, "likeabouse"
+set :application, "redesign.likeabouse"
 set :repository,  "git://github.com/likeabouse/likeabouse.com.git"
-set :deploy_to, "~/www/likeabouse.com/"
+set :deploy_to, "~/www/redesign.likeabouse.com/"
 
 role :web, "bashman.org"
 role :app, "bashman.org"
