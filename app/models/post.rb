@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
   scope :recent, order: "created_at DESC"
   scope :by_category, lambda { |category_id| where(category_id: category_id) }
 
-  paginates_per 12
+  paginates_per 16
 
   def self.search(search)
     where('name LIKE ? OR description LIKE ?', "%#{search}%", "%#{search}%")

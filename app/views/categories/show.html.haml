@@ -1,6 +1,7 @@
 - if @posts.any?
   = render "categories/posts", posts: @posts
-  = paginate @posts
+  .hidden
+    = paginate @posts
 - else
   .row-fluid
     .no_entries
