@@ -8,6 +8,11 @@ class PostsController < ApplicationController
     @posts = Post.order("created_at DESC").page(params[:page]).per(12)
   end
 
+  def search
+    @posts = Post.search(params[:search]).page(params[:page])
+    render :index
+  end
+
   def recent
     @posts = Post.top(10).recent.all
 

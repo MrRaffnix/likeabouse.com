@@ -1,2 +1,8 @@
-= render "categories/posts", posts: @posts
-= paginate @posts
+- if @posts.any?
+  = render "categories/posts", posts: @posts
+  = paginate @posts
+- else
+  .row-fluid
+    .no_entries
+      = image_tag('sad_smiley.png')
+      = "Leider keine Einträge gefunden"

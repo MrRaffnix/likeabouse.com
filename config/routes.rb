@@ -8,6 +8,7 @@ LikeabouseCom::Application.routes.draw do
     collection do
       get 'recent'
       get 'feed'
+      get 'search'
     end
   end
 

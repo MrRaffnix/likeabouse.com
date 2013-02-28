@@ -9,4 +9,8 @@ class Post < ActiveRecord::Base
   scope :top, lambda { |l| limit(l) }
   scope :by_category, lambda { |category_id| where(category_id: category_id) }
 
+  def self.search(search)
+    where('name LIKE ?', "%#{search}%")
+  end
+
 end
