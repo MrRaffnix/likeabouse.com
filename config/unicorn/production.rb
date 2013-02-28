@@ -1,9 +1,9 @@
-app_path = "/home/angelo/www/likeabouse.com/current"
+app_path = "/home/angelo/www/redesign.likeabouse.com/current"
 
 worker_processes 1
 preload_app true
 timeout 180
-listen "127.0.0.1:8091"
+listen "127.0.0.1:8071"
 
 user 'angelo', 'angelo'
 
