@@ -1,24 +1,41 @@
-set :rvm_ruby_string, '2.0.0-p0@likeabouse.com'
+set :application, "likeabouse"
+# =============================================================================
+# MULTISTAGE CONFIGURATION (see config/deploy/foobar.rb)
+# =============================================================================
+set :stages, %w(staging production)
+require 'capistrano/ext/multistage'
 require "bundler/capistrano"
 require "rvm/capistrano"
+require "capistrano-unicorn"
 
+set :default_stage, "staging"
+#############################################################
+#    Settings
+#############################################################
 set :user, 'angelo'
 set :use_sudo, false
 
+set :rvm_ruby_string, '2.0.0-p0@likeabouse.com'
+set :bundle_without, %w(development test)
+
 set :scm, :git
-set :branch, 'redesign'
 set :scm_verbose, true
-
-set :application, "redesign.likeabouse"
+set :application, "likeabouse"
 set :repository,  "git://github.com/likeabouse/likeabouse.com.git"
-set :deploy_to, "~/www/redesign.likeabouse.com/"
 
-role :web, "bashman.org"
-role :app, "bashman.org"
-role :db,  "bashman.org", :primary => true
+set :branch do
+  default_tag = `git tag`.split("\n").last
 
-after 'deploy:update_code', 'deploy:symlink_db'
+  tag = Capistrano::CLI.ui.ask "Tag to deploy (make sure to push the tag first): [#{default_tag}] "
+  tag = default_tag if tag.empty?
+  tag
+end
 
+set :keep_releases, 20
+
+#############################################################
+#    Additional Capistrano Tasks
+#############################################################
 namespace :deploy do
   desc "Symlinks the database.yml"
   task :symlink_db, :roles => :app do
@@ -26,4 +43,9 @@ namespace :deploy do
   end
 end
 
-require "capistrano-unicorn"
+#############################################################
+#    Hooks
+#############################################################
+after 'deploy:update_code', 'deploy:symlink_db'
+# after 'deploy', 'deploy:assets:precompile'
+# before 'deploy:assets:precompile', 'deploy:symlink_db'

@@ -19,6 +19,7 @@ gem 'seed-fu', '~> 2.2.0'
 gem 'capistrano', '2.14.2'
 gem 'rvm-capistrano', '1.2.7'
 gem 'capistrano-unicorn', :require => false
+gem 'capistrano-multistage'
 
 gem 'unicorn', '4.6.2'
 gem 'thin', '1.5.0'
