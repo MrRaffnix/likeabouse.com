@@ -12,6 +12,8 @@ class ApplicationController < ActionController::Base
   end
 
   def categories_to_show
-    @categories   = Category.to_show
+    @categories       = Category.to_show
+    @categories_left  = @categories[0...(@categories.count/2).ceil]
+    @categories_right = @categories - @categories_left
   end
 end

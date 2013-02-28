@@ -1,0 +1,4 @@
+.categories
+  - categories.each do |category|
+    .category{id: dom_id(category)}
+      = link_to_category category

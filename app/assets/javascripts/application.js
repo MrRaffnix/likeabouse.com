@@ -4,3 +4,4 @@
 //= require jquery.ui.all
 //= require modernizr
 //= require active_admin
+//= require bouse

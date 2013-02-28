@@ -6,7 +6,6 @@ LikeabouseCom::Application.routes.draw do
 
   resources :posts, :only => [:show] do
     collection do
-      get 'recent'
       get 'feed'
       get 'search'
     end

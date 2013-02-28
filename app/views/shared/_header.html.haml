@@ -1,17 +1,13 @@
-.span3  
+.span3
   .logo
     = link_to image_tag(asset_path("logo_transparent_small.png")), root_path
 .span2
-  .categories
-    - @categories[0..3].each do |category|
-      .category= link_to category.name, category
+  = render "shared/categories", categories: @categories_left
 .span2
-  .categories
-    - @categories[4..8].each do |category|
-      .category= link_to category.name, category
+  = render "shared/categories", categories: @categories_right
 .span3
-  .search_field
-    = form_tag search_posts_path, method: :get do
+  .search_field.jq_search_field
+    = form_tag search_posts_path, method: :get, remote: true do
       = text_field_tag :search, params[:search]
       = submit_tag "Search", name: nil, class: "button"
 .span2

@@ -14,12 +14,23 @@
 
   .categories, .links
     margin-top: 10px
-    a
-      color: $red1
-    a:hover
-      color: $red1
-      text-decoration: none
-      border-bottom: 2px solid $red1
+    .category
+      a
+        color: $red1
+
+        &:hover
+          color: $red1
+          text-decoration: none
+          border-bottom: 2px solid $red1
+
+      &.active
+        a
+          color: $black
+          font-weight: bold
+
+          &:hover
+            border-bottom: 2px solid $black2
+
   .links
     float: right
     margin-right: 25px

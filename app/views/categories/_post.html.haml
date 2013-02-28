@@ -1,5 +1,5 @@
 .post
-  .date= post.created_at.strftime("%d.%m.%Y %H:%M")
-  .name= link_to post.name, post.link, target: "_blank"
+  .date= datetime_string(post.created_at)
+  .name= link_to_post post
   .description= post.description
-  .link= link_to truncate(post.link, length: 40), post.link,  target: "_blank"
+  .link= link_to_post_link post

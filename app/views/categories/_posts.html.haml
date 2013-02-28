@@ -2,4 +2,4 @@
   .row-fluid
     - for post in row_posts
       .span3
-        = render partial: "categories/post", object: post
+        = render "categories/post", post: post
