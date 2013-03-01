@@ -1,0 +1,3 @@
+- git = Git.open Rails.root
+- last_commit = git.log.first
+#develop{data: {sha: last_commit.sha, message: last_commit.message, author: last_commit.author.name}}

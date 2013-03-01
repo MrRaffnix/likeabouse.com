@@ -1,23 +1,17 @@
 class CategoriesController < ApplicationController
-  layout 'with_tabs'
+  layout 'application'
 
   def show
     @category_id  = params[:id].to_i
 
     @category = Category.find_by_id(@category_id)
-    @posts    = Post.by_category(@category_id).recent.page(params[:page] || 1).per(10)
+    @posts    = Post.by_category(@category_id).recent.page(params[:page] || 1)
+
+    @title    = "Like a Bouse - #{@category.name}"
 
     if request.xhr?
-      if params[:pagination].present?
-        render partial: "categories/page", locals: {category: @category, posts: @posts}
-      else
-        render partial: "categories/show", locals: {category: @category, posts: @posts}
-      end
+      render "categories/show", category: @category, posts: @posts, layout: nil
     else
-      @selected_tab = @categories.map(&:id).index(@category_id)
-      @categories   = Category.to_show
-
-      @js_files     = ["tabs"]
       render :show
     end
   end

@@ -1,5 +1,5 @@
-%tr{id: dom_id(post)}
-  %td.name
-    %span.link= post_as_link(post)
-    %span.description= post.description
-  %td.created= post_information post
+.post
+  .date= datetime_string(post.created_at)
+  .name= link_to_post post
+  .description= post.description
+  .link= link_to_post_link post

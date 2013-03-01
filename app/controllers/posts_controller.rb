@@ -1,27 +1,33 @@
 class PostsController < ApplicationController
-  layout "with_tabs"
+  layout "application"
 
-  respond_to :rss, :only => [:feed]
-  respond_to :html, :only => [:recent]
+  respond_to :rss, only: [:feed]
+  respond_to :html, only: [:index]
 
-  def recent
-    @posts = Post.top(10).recent.all
+  def index
+    @posts = Post.recent.page(params[:page])
 
     if request.xhr?
-      render partial: "posts/index", locals: {posts: @posts}
+      render "categories/show", category: @category, posts: @posts, layout: nil
     else
-      @categories = Category.to_show
-      @js_files   = ["tabs"]
+      render template: "categories/show"
+    end
+  end
 
-      render "posts/recent"
+  def search
+    @posts = Post.search(params[:search]).page(params[:page])
+
+    if request.xhr?
+      render "categories/show", category: @category, posts: @posts, layout: nil
+    else
+      render template: "categories/show"
     end
   end
 
   def feed
     @posts = Post.top(20).recent.all
     respond_to do |format|
-      format.rss {render :layout => false, :content_type => "application/rss"}
+      format.rss {render layout: false, content_type: "application/rss"}
     end
-
   end
 end

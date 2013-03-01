@@ -1,31 +1,48 @@
-header
-  height: 125px
-  position: fixed
-  top: 0
-  z-index: 3
-  width: 100%
-  border-bottom: 4px solid $red1
-  background-image: image_url('bouse_background.png')
-
-  h4
-    color: $red1
-    padding-top: 100px
-
-  .c24
-    height: 100px
-
-  .logo
-    float: left
-
-    img
-      width: 242px
-      height: 120px
-
+#header
+  border-top: 2px solid $red1
   .social
-    padding-top: 10px
+    margin-top: 15px
+    margin-right: 20px
     float: right
-
     img.rss
       padding-bottom: 1px
       width: 59px
       height: 59px
+  .logo
+    margin-left: 20px
+    margin-top: 10px
+
+  .categories, .links
+    margin-top: 10px
+    .category
+      a
+        color: $red1
+
+        &:hover
+          color: $red1
+          text-decoration: none
+          border-bottom: 2px solid $red1
+
+      &.active
+        a
+          color: $black
+          font-weight: bold
+
+          &:hover
+            border-bottom: 2px solid $black2
+
+  .links
+    float: right
+    margin-right: 25px
+
+  .search_field
+    margin-top: 5px
+    input
+      padding: 4px 6px
+      border-radius: 10px      
+      #search
+        color: grey
+        width: 100px
+    input[type="submit"]
+      background: $gray
+      border: none

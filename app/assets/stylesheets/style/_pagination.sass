@@ -1,15 +1,57 @@
-.bouse_pagination
-  padding: 0 0 10px 10px
-  text-align: center
-  
+.pagination a, span
+  float: left
+
+.pagination span.current, span.gap
+  padding: 2px 5px
+  margin-right: 5px
+  border-style: solid
+  border-width: 1px
+
+.pagination
+  margin-top: 20px
+  margin-bottom: 30px
   a
-    font-size: 85%
-    color: $gray
-  
-  .page.current
-    font-size: 90%
-    color: $black2
-    font-weight: bold
-          
-  .next a, .prev a, .first a, .last a
-    font-weight: italic
+    text-decoration: none
+    padding: 2px 5px
+    margin-right: 5px
+    display: block
+    border-style: solid
+    border-width: 1px
+  span.current
+    background: #261f1f
+    color: white
+    border: 1px solid #261f1f
+    padding: 6px
+    min-width: 15px
+    text-align: center
+    -moz-border-radius: 2px
+    -webkit-border-radius: 2px
+
+span.gap
+  background: #261f1f
+  color: white
+  border: 1px solid #261f1f
+  padding: 6px
+  min-width: 15px
+  text-align: center
+  -moz-border-radius: 2px
+  -webkit-border-radius: 2px
+
+.pagination a
+  border: 1px solid #c3c4ba
+  -moz-border-radius: 2px
+  -webkit-border-radius: 2px
+  border-radius: 2px
+  margin-right: 5px
+  padding: 6px
+  min-width: 15px
+  text-align: center
+  background: #dddddd
+  color: #111111
+  &:hover
+    border: 1px solid #818171
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3)
+    -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3)
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3)
+  &:active
+    outline: none

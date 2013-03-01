@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    = render "shared/head"
+  %body
+    .container-fluid
+      .row-fluid
+        #header
+          = render "shared/header"
+      .row-fluid
+        #bodyer
+          = yield
+    = render "shared/develop"
+    = render "shared/javascript"

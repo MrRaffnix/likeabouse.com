@@ -1,8 +1,22 @@
-.o
-  .c24
-    .logo
-      = link_to image_tag(asset_path("logo_transparent.png")), root_path
-    .social
-      = link_to image_tag('misc/twitter.png'), 'https://twitter.com/#!/Like_a_bouse', target: '_blank'
-      = link_to image_tag('misc/facebook.png'), 'https://www.facebook.com/pages/Likeabouse/258771540888972', target: '_blank'
-      = link_to image_tag('misc/rss.png', class: "rss"), feed_url, target: '_blank'
+.span3
+  .logo
+    = link_to image_tag(asset_path("logo_transparent_small.png")), root_path
+.span2
+  = render "shared/categories", categories: @categories_left
+.span2
+  = render "shared/categories", categories: @categories_right
+.span3
+  .search_field.jq_search_field
+    = form_tag search_posts_path, method: :get, remote: true do
+      = text_field_tag :search, params[:search]
+      = submit_tag "Search", name: nil, class: "button"
+.span2
+  .links
+    = link_to "Imprint", imprint_path
+    &nbsp; &nbsp;
+    = link_to "About Us", about_path
+.span3.offset2
+  .social.hidden-phone
+    = link_to image_tag('misc/twitter.png'), 'https://twitter.com/#!/Like_a_bouse', target: '_blank'
+    = link_to image_tag('misc/facebook.png'), 'https://www.facebook.com/pages/Likeabouse/258771540888972', target: '_blank'
+    = link_to image_tag('misc/rss.png', class: "rss"), feed_url, target: '_blank'

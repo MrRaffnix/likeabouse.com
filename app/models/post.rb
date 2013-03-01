@@ -6,7 +6,11 @@ class Post < ActiveRecord::Base
   validate :name, :description, :link, :category_id, :author_id, presence: true
 
   scope :recent, order: "created_at DESC"
-  scope :top, lambda { |l| limit(l) }
   scope :by_category, lambda { |category_id| where(category_id: category_id) }
 
+  paginates_per 16
+
+  def self.search(search)
+    where('name LIKE ? OR description LIKE ?', "%#{search}%", "%#{search}%")
+  end
 end
