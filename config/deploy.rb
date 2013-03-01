@@ -39,7 +39,7 @@ set :keep_releases, 20
 namespace :deploy do
   desc "Symlinks the database.yml"
   task :create_symlinks, :roles => :app do
-    run "ln -nfs #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
+    run "ln -nfs #{deploy_to}/shared/config/database.yml #{releases_path}/config/database.yml"
   end
 end
 
