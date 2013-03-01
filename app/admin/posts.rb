@@ -1,4 +1,4 @@
-ActiveAdmin.register Post do
+ActiveAdmin.register Post, as: 'Poust' do
   menu priority: 1
 
   scope :all
