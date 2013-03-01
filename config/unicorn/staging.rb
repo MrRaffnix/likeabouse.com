@@ -9,7 +9,7 @@ user 'angelo', 'angelo'
 
 working_directory app_path
 
-rails_env = ENV['RAILS_ENV'] || 'production'
+rails_env = 'staging'
 
 stderr_path "log/unicorn.log"
 stdout_path "log/unicorn.log"
