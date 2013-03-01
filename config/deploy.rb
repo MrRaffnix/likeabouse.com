@@ -4,6 +4,7 @@ set :application, "likeabouse"
 # =============================================================================
 set :stages, %w(staging production)
 require 'capistrano/ext/multistage'
+require 'capistrano-lazy-assets'
 require "bundler/capistrano"
 require "rvm/capistrano"
 require "capistrano-unicorn"
@@ -12,15 +13,11 @@ set :default_stage, "staging"
 #############################################################
 #    Settings
 #############################################################
-set :user, 'angelo'
-set :use_sudo, false
-
 set :rvm_ruby_string, '2.0.0-p0@likeabouse.com'
 set :bundle_without, %w(development test)
 
 set :scm, :git
 set :scm_verbose, true
-set :application, "likeabouse"
 set :repository,  "git://github.com/likeabouse/likeabouse.com.git"
 
 set :branch do
@@ -38,13 +35,12 @@ set :keep_releases, 20
 #############################################################
 namespace :deploy do
   desc "Symlinks the database.yml"
-  task :create_symlinks, :roles => :app do
-    run "ln -nfs #{deploy_to}/shared/config/database.yml #{releases_path}/config/database.yml"
+  task :symlink_db, :roles => :app do
+    run "ln -nfs #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
   end
 end
 
 #############################################################
 #    Hooks
 #############################################################
-# after 'deploy', 'deploy:assets:precompile'
-# before 'deploy:assets:precompile', 'deploy:symlink_db'
+after 'deploy:update_code', 'deploy:symlink_db'
