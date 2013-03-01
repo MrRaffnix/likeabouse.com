@@ -52,7 +52,8 @@ GEM
     bundle_outdated (0.0.4)
     bundler-audit (0.1.2)
       bundler (~> 1.2)
-    capistrano (2.14.2)
+    cape (1.6.2)
+    capistrano (2.14.1)
       highline
       net-scp (>= 1.0.0)
       net-sftp (>= 2.0.0)
@@ -248,10 +249,11 @@ DEPENDENCIES
   activeadmin (= 0.5.1)
   bundle_outdated
   bundler-audit
-  capistrano (= 2.14.2)
+  cape (~> 1)
+  capistrano (= 2.14.1)
   capistrano-ext (= 1.2.1)
   capistrano-lazy-assets (= 0.0.7)
-  capistrano-unicorn (= 0.1.6)
+  capistrano-unicorn
   chunky_png
   coffee-rails (~> 3.2.2)
   factory_girl_rails

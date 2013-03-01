@@ -16,12 +16,6 @@ gem 'activeadmin', '0.5.1'
 
 gem 'seed-fu', '~> 2.2.0'
 
-gem 'capistrano', '2.14.2'
-gem 'rvm-capistrano', '1.2.7'
-gem 'capistrano-unicorn', '0.1.6', :require => false
-gem 'capistrano-ext', '1.2.1'
-gem 'capistrano-lazy-assets', '0.0.7'
-
 gem 'unicorn', '4.6.2'
 gem 'thin', '1.5.0'
 
@@ -43,6 +37,13 @@ group :development, :test do
 end
 
 group :development do
+  gem 'capistrano', '2.14.1'
+  gem 'capistrano-ext', '1.2.1'
+  gem 'cape', '~> 1'
+  gem 'capistrano-lazy-assets', '0.0.7'
+  gem 'rvm-capistrano', '1.2.7'
+  gem 'capistrano-unicorn', :require => false
+
   gem 'bundle_outdated'
   gem 'bundler-audit'
   gem 'rails_best_practices'
