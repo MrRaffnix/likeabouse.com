@@ -1,6 +1,0 @@
-%nav.side_navigation
-  %h3 Categories
-  - for category in @categories || Category.ordered.all
-    .nav_element{class: active_class(@category_id == category.id)}
-      = tiny_tag "next"
-      = link_to category.name, category_path(category)
