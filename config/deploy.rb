@@ -1,19 +1,19 @@
-set :application, "likeabouse"
 # =============================================================================
 # MULTISTAGE CONFIGURATION (see config/deploy/foobar.rb)
 # =============================================================================
 set :stages, %w(staging production)
 require 'capistrano/ext/multistage'
 require 'capistrano-lazy-assets'
-require "bundler/capistrano"
-require "rvm/capistrano"
-require "capistrano-unicorn"
 
 set :default_stage, "staging"
 #############################################################
 #    Settings
 #############################################################
+set :application, "likeabouse"
+
+require "rvm/capistrano"
 set :rvm_ruby_string, '2.0.0-p0@likeabouse.com'
+require "bundler/capistrano"
 set :bundle_without, %w(development test)
 
 set :scm, :git
@@ -44,3 +44,5 @@ end
 #    Hooks
 #############################################################
 after 'deploy:update_code', 'deploy:symlink_db'
+
+require "capistrano-unicorn"
