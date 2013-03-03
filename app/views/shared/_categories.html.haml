@@ -1,4 +1,4 @@
 .categories
   - categories.each do |category|
-    .category{id: dom_id(category)}
+    .category{id: dom_id(category), class: (active_category == category ? "active" : "")}
       = link_to_category category

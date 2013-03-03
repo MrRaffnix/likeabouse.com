@@ -2,9 +2,9 @@
   .logo
     = link_to image_tag(asset_path("logo_transparent_small.png")), root_path
 .span2
-  = render "shared/categories", categories: @categories_left
+  = render "shared/categories", categories: @categories_left, active_category: @category
 .span2
-  = render "shared/categories", categories: @categories_right
+  = render "shared/categories", categories: @categories_right, active_category: @category
 .span3
   .search_field.jq_search_field
     = form_tag search_posts_path, method: :get, remote: true do
