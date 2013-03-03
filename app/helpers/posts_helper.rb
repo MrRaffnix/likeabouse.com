@@ -14,7 +14,19 @@ module PostsHelper
   def truncate_link(link)
     return "-" if link.nil?
 
-    truncate link.gsub("https://", "").gsub("http://", ""), length: 40
+    truncate link.gsub("https://", "").gsub("http://", ""), length: 35
+  end
+
+  def post_css_class(post)
+    created_at = post.created_at
+
+    if created_at >= 2.days.ago
+      "post brand-new"
+    elsif created_at >= 1.week.ago
+      "post new"
+    else
+      "post old"
+    end
   end
 
   def author_of_post post
