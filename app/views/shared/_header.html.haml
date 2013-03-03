@@ -8,8 +8,7 @@
 .span3
   .search_field.jq_search_field
     = form_tag search_posts_path, method: :get, remote: true do
-      = text_field_tag :search, params[:search]
-      = submit_tag "Search", name: nil, class: "button"
+      = text_field_tag :search, params[:search], placeholder: "Search"
 .span2
   .links
     = link_to "Imprint", imprint_path

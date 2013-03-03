@@ -17,32 +17,30 @@
     .category
       a
         color: $red1
-
         &:hover
           color: $red1
           text-decoration: none
           border-bottom: 2px solid $red1
-
       &.active
         a
           color: $black
           font-weight: bold
-
           &:hover
             border-bottom: 2px solid $black2
 
   .links
     float: right
     margin-right: 25px
-
   .search_field
-    margin-top: 5px
+    margin-top: 10px
     input
       padding: 4px 6px
-      border-radius: 10px      
-      #search
-        color: grey
-        width: 100px
+      border-radius: 6px   
+      width: 200px
+      height: 20px   
+      color: grey        
+    input:focus
+      outline: 0
     input[type="submit"]
       background: $gray
       border: none
