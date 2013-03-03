@@ -1,6 +1,6 @@
 set :rails_env, "staging"
 set :branch do
-  default_branch = 'redesign'
+  default_branch = 'develop'
 
   tag = Capistrano::CLI.ui.ask "branch or tag to deploy?: [#{default_branch}] "
   tag = default_branch if tag.empty?
