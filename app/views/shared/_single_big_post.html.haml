@@ -1,0 +1,16 @@
+/ TODO: Next line must be deleted when done
+- post = Post.first
+.row-fluid
+  .span6.offset3
+    .big_post
+      .span2
+        = link_to image_tag(asset_path("logo_without_text.png")), root_path
+      .span10
+        .small_logo= link_to image_tag(asset_path("logo_without_text.png")), root_path
+        .post_headline
+          .name= link_to_post post
+          .date= datetime_string(post.created_at)
+        .post_body 
+          .description= post.description
+          .link= link_to_post_link post
+        .small_logo= link_to image_tag(asset_path("logo_without_text.png")), root_path
