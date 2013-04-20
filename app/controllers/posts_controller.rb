@@ -4,8 +4,10 @@ class PostsController < ApplicationController
   respond_to :rss, only: [:feed]
   respond_to :html, only: [:index]
 
+  #root
   def index
-    @posts = Post.recent.page(params[:page])
+    page          = params[:page] || 1
+    @posts        = Post.recent.page(page)
 
     if request.xhr?
       render "categories/show", category: @category, posts: @posts, layout: nil
@@ -24,8 +26,23 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @post     = Post.find(params[:id])
+
+    @title    = "Like a Bouse - #{@post.name}"
+ 
+    if request.xhr?
+      render partial: "posts/post", object: @post
+    else
+      @category = Category.by_post(@post).first
+      @posts    = @post.related_posts
+
+      render :show
+    end
+  end
+
   def feed
-    @posts = Post.top(20).recent.all
+    @posts = Post.top(25).recent.all
     respond_to do |format|
       format.rss {render layout: false, content_type: "application/rss"}
     end

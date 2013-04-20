@@ -9,6 +9,10 @@
           = render "shared/header"
       .row-fluid
         #bodyer
-          = yield
+          #focus.js-focus
+            - if content_for?(:focus)
+              = yield :focus
+          #content
+            = yield
     = render "shared/develop"
     = render "shared/javascript"

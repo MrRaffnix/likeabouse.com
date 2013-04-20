@@ -1,14 +1,25 @@
 module PostsHelper
+
   def link_to_category(category)
     link_to category.name, category_path(category), class: "jq_category_link", remote: true
   end
 
-  def link_to_post(post)
-    link_to_blank post.name, post.link
+  def link_to_post(post, disabled = false)
+    link_to post.name, extended_post_path(post), class: "jq-open-post", remote: true, disabled: disabled
   end
 
-  def link_to_post_link(post)
-    link_to_blank truncate_link(post.link), post.link
+  def extended_post_path(post)
+    "#{post_path(post)}-#{post.name_to_path}"
+  end
+
+  def exended_post_url(post)
+    "#{post_url(post)}-#{post.name_to_path}"
+  end
+
+  def link_to_post_link(post, truncate = true)
+    link_text = truncate ? truncate_link(post.link) : post.link
+
+    link_to_blank link_text, post.link
   end
 
   def truncate_link(link)
@@ -29,7 +40,11 @@ module PostsHelper
     end
   end
 
-  def author_of_post post
+  def post_to_json(post)
+    post.as_json(only: [:id, :name]).to_json
+  end
+
+  def author_of_post(post)
     author = post.author
     if author.present?
       if author.first_name.present?

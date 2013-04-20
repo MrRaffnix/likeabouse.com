@@ -2,7 +2,6 @@ source "https://rubygems.org"
 
 gem 'rails',  '3.2.13'
 gem 'mysql2', '0.3.11'
-gem 'mysql',  '2.9.1'
 
 gem 'haml-rails',       '0.4.0'
 gem 'jquery-rails',     '2.2.1'
@@ -10,7 +9,7 @@ gem 'jquery-ui-rails',  '4.0.2'
 gem 'modernizr-rails',  '2.6.2.1'
 
 gem 'kaminari',     '0.14.1'
-gem 'activeadmin',  '0.5.1'
+gem 'activeadmin',  '0.6.0'
 
 gem 'git',      '1.2.5'
 gem 'seed-fu',  '2.2.0'

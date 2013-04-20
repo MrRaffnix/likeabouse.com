@@ -1,6 +1,7 @@
 $ ->
-  browserTitle = $("#title").data('title')
-
+  postManager = new PostManager('.jq-posts', '.js-focus')
+  postManager.bindPostClick()
+  
   $(".categories").on 'ajax:complete', 'a.jq_category_link', (event, data, status, xhr) ->
     if status == 'error'
       console.log('i am an error')
@@ -20,6 +21,7 @@ $ ->
       url = $(this).attr('action')+"?search="+$(this).find('input#search').val()
 
       history.pushState null, null, url
+  
 
   # $(window).scroll ->
   #   url = $('.pagination .next a').attr('href')
