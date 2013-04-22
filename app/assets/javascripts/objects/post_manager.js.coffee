@@ -5,18 +5,25 @@ class @PostManager
 
   bindPostClick: ->
     postManager = this
-    @element().on 'ajax:complete', '.jq-open-post', (event, data, status, xhr) ->
+    @element().on 'ajax:complete', '.jq_open_post', (event, data, status, xhr) ->
       if status == 'error'
         console.log('an error occured')
       else
         for link in postManager.postLinks
           $(link).removeClass('in-focus')
 
-        $(this).parents('.jq-post-box').addClass('in-focus')
+        $(this).parents('.jq_post_box').addClass('in-focus')
         postManager.focusPost(data.responseText)
 
   loadPostLinks: ->
-    @postLinks = @element().find('.jq-post-box')
+    @postLinks = @element().find('.jq_post_box')
+
+  reload: ->
+    for link in @postLinks
+      $(link).removeClass('in-focus')
+    @focusArea().empty()
+    @loadPostLinks()
+    
 
   focusPost: (content) ->
     @focusArea().html(content)

@@ -5,7 +5,7 @@ module PostsHelper
   end
 
   def link_to_post(post, disabled = false)
-    link_to post.name, extended_post_path(post), class: "jq-open-post", remote: true, disabled: disabled
+    link_to post.name, extended_post_path(post), class: "jq_open_post", remote: true, disabled: disabled
   end
 
   def extended_post_path(post)
