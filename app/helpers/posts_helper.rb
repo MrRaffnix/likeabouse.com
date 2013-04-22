@@ -4,8 +4,12 @@ module PostsHelper
     link_to category.name, category_path(category), class: "jq_category_link", remote: true
   end
 
-  def link_to_post(post, disabled = false)
-    link_to post.name, extended_post_path(post), class: "jq_open_post", remote: true, disabled: disabled
+  def link_to_post(post)
+    link_to post.name, extended_post_path(post), class: "jq_open_post", remote: true
+  end
+
+  def link_external_to_post(post)
+    link_to_blank post.name, post.link
   end
 
   def extended_post_path(post)

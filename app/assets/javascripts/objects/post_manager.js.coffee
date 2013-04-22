@@ -5,6 +5,7 @@ class @PostManager
 
   bindPostClick: ->
     postManager = this
+    @disableAreaLink()
     @element().on 'ajax:complete', '.jq_open_post', (event, data, status, xhr) ->
       if status == 'error'
         console.log('an error occured')
@@ -13,7 +14,7 @@ class @PostManager
           $(link).removeClass('in-focus')
 
         $(this).parents('.jq_post_box').addClass('in-focus')
-        postManager.focusPost(data.responseText)
+        postManager.focusPost(data.responseText, $(this).attr('href'))
 
   loadPostLinks: ->
     @postLinks = @element().find('.jq_post_box')
@@ -25,11 +26,16 @@ class @PostManager
     @loadPostLinks()
     
 
-  focusPost: (content) ->
+  focusPost: (content, link) ->
     @focusArea().html(content)
+    history.pushState null, null, link
     $("html, body").stop(true, true).animate
         scrollTop: @focusArea().offset().top - 150
       , 1000
+
+  disableAreaLink: ->
+    @element().on 'click', '.jq_focus a', (event) ->
+      event.preventDefault()
 
   element: ->
     $(@selector)
