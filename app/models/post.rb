@@ -14,4 +14,12 @@ class Post < ActiveRecord::Base
   def self.search(search)
     where('name LIKE ? OR description LIKE ?', "%#{search}%", "%#{search}%")
   end
+
+  def related_posts
+    Post.by_category(Category.by_post(self).first.id).where("id != ?", self.id).recent.page(1)
+  end
+
+  def name_to_path
+    name.downcase.gsub(/\s+/, "-")
+  end
 end

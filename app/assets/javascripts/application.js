@@ -5,4 +5,5 @@
 //= require modernizr
 
 //= require active_admin
+//= require objects/post_manager
 //= require bouse

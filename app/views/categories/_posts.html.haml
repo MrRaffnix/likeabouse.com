@@ -1,5 +1,7 @@
+- row_index = 0
 - posts.in_groups_of(4, false) do |row_posts|
-  .row-fluid
+  .row-fluid.jq_posts_row{data: {row: row_index}}
+    - row_index += 1
     - for post in row_posts
       .span3
         = render "categories/post", post: post

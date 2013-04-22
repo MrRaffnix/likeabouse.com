@@ -1,8 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  before_filter :set_meta_defaults, :categories_to_show
+  before_filter :set_meta_defaults
 
+  helper_method :categories_to_show
   helper :all
 
   def set_meta_defaults
@@ -13,9 +14,8 @@ class ApplicationController < ActionController::Base
 
   end
 
+  private
   def categories_to_show
-    @categories       = Category.to_show
-    @categories_left  = @categories[0...(@categories.count/2).ceil]
-    @categories_right = @categories - @categories_left
+    @categories       ||= Category.to_show
   end
 end

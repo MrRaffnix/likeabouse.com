@@ -1,4 +1,4 @@
-.post
+.post.jq_post_box{id: dom_id(post), data: {post: post_to_json(post)}}
   .post_headline
     %div{class: post_css_class(post)}= "NEW"
     .name= link_to_post post

@@ -9,6 +9,9 @@
           = render "shared/header"
       .row-fluid
         #bodyer
-          = yield
+          #focus.jq_focus
+            = yield :focus
+          #content.jq_posts
+            = yield
     = render "shared/develop"
     = render "shared/javascript"
