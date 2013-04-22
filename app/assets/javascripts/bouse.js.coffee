@@ -1,5 +1,5 @@
 $ ->
-  postManager = new PostManager('.jq-posts', '.js-focus')
+  postManager = new PostManager('.js-posts', '.js-focus')
   postManager.bindPostClick()
   
   $(".categories").on 'ajax:complete', 'a.jq_category_link', (event, data, status, xhr) ->
@@ -8,7 +8,9 @@ $ ->
     else
       $('.categories > .category').removeClass 'active'
       $(this).parent().addClass 'active'
-      $('#bodyer').html data.responseText
+      $('.js-category').html data.responseText
+      $('.js-focus').empty()
+      postManager.loadPostLinks()
 
       history.pushState null, null, $(this).attr('href')
 
@@ -17,7 +19,9 @@ $ ->
       console.log('searching => error')
     else
       $('.categories > .category').removeClass 'active'
-      $('#bodyer').html data.responseText
+      $('.js-posts').html data.responseText
+      $('.js-focus').empty()
+      postManager.loadPostLinks()
       url = $(this).attr('action')+"?search="+$(this).find('input#search').val()
 
       history.pushState null, null, url

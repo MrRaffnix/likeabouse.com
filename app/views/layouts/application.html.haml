@@ -10,9 +10,8 @@
       .row-fluid
         #bodyer
           #focus.js-focus
-            - if content_for?(:focus)
-              = yield :focus
-          #content
+            = yield :focus
+          #content.js-posts.js-category
             = yield
     = render "shared/develop"
     = render "shared/javascript"
