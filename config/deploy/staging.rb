@@ -18,3 +18,4 @@ namespace :deploy do
 end
 
 require "capistrano-unicorn"
+after 'deploy:restart', 'unicorn:restart'
