@@ -6,16 +6,16 @@ set :branch do
   tag = default_branch if tag.empty?
   tag
 end
-set :application, "redesign.likeabouse.com"
+
+require "rvm/capistrano"
+set :rvm_ruby_string, '2.0.0-p0@likeabouse.com'
+
+role :web, "beta.bashman.org"
+
+set :application, "staging.likeabouse.com"
 
 set :deploy_to, "/home/angelo/www/#{application}/"
 
-namespace :deploy do
-  desc "Symlinks the database.yml"
-  task :symlink_db, :roles => :app do
-    run "ln -nfs #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
-  end
-end
-
 require "capistrano-unicorn"
+after 'deploy:update_code', 'deploy:symlink_db'
 after 'deploy:restart', 'unicorn:restart'
