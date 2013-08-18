@@ -3,7 +3,7 @@ app_path = "/home/angelo/www/likeabouse.com/current"
 worker_processes 1
 preload_app true
 timeout 180
-listen "127.0.0.1:8091"
+listen "/home/angelo/www/likeabouse.com/current/tmp/sockets/unicorn.sock", :backlog => 64
 
 user 'angelo', 'angelo'
 
