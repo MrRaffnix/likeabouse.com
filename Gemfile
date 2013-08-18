@@ -34,7 +34,7 @@ group :staging, :production do
   gem 'rvm-capistrano',         '1.3.0'
 
   gem 'unicorn',                '4.6.2'
-  gem 'capistrano-unicorn',     '0.1.7', require: false
+  gem 'capistrano-unicorn',     '0.1.10', require: false
 end
 
 group :development, :test do
