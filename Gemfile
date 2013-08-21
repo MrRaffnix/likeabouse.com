@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem 'rails',  '3.2.14'
+gem 'rails',  '4.0.0'
 gem 'mysql2', '0.3.13'
 
 gem 'haml-rails',       '0.4.0'
@@ -9,17 +9,18 @@ gem 'jquery-ui-rails',  '4.0.4'
 gem 'modernizr-rails',  '2.6.2.3'
 
 gem 'kaminari',     '0.14.1'
-gem 'activeadmin',  '0.6.0'
+gem 'activeadmin',  '0.6.0', github: "gregbell/active_admin", branch: "rails4"
 
 gem 'git',      '1.2.6'
-gem 'seed-fu',  '2.2.0'
+# removed in cause of rails4 -- maybe refactor gem or code
+# gem 'seed-fu',  '2.2.0' 
 gem 'thin',     '1.5.1'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'coffee-rails',   '3.2.2'
-  gem 'sass-rails',     '3.2.6'
+  gem 'coffee-rails',   '4.0.0'
+  gem 'sass-rails',     '4.0.0'
   gem 'uglifier',       '2.1.2'
   gem "therubyracer",   '0.12.0', require: 'v8'
   gem 'sprite-factory', '1.5.3'
