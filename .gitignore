@@ -5,8 +5,8 @@ vendor/bundle
 config/database.yml
 
 /log/*.log
+!/tmp/sockets/.gitkeep
 /tmp
-
 #Mac specific
 .DS_Store
 
