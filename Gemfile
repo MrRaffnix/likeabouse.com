@@ -3,7 +3,7 @@ source "https://rubygems.org"
 gem 'rails',  '4.0.0'
 gem 'mysql2', '0.3.13'
 
-gem 'haml-rails'
+gem 'haml-rails',       '0.4.0'
 gem 'jquery-rails',     '3.0.4'
 gem 'jquery-ui-rails',  '4.0.4'
 gem 'modernizr-rails',  '2.6.2.3'
@@ -51,5 +51,5 @@ group :development do
 end
 
 group :test do
-  gem 'simplecov', require: false
+  gem 'simplecov', '0.7.1', require: false
 end
