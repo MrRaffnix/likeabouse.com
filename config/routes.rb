@@ -1,8 +1,8 @@
 LikeabouseCom::Application.routes.draw do
   root :to => "posts#index"
-  match "imprint" => "pages#imprint", as: "imprint"
-  match "about" => "pages#about", as: "about"
-  match "feed" => "posts#feed", as: "feed", :format => :rss
+  get "imprint" => "pages#imprint", as: "imprint"
+  get "about" => "pages#about", as: "about"
+  get "feed" => "posts#feed", as: "feed", :format => :rss
 
   resources :posts, :only => [:show] do
     collection do
