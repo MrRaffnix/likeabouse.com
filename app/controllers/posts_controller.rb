@@ -30,7 +30,7 @@ class PostsController < ApplicationController
     @post     = Post.find(params[:id])
 
     @title    = "Like a Bouse - #{@post.name}"
- 
+
     if request.xhr?
       render partial: "posts/post", object: @post
     else
