@@ -1,9 +1,12 @@
 FactoryGirl.define do
   factory :post do |f|
-    
     f.name { @name = Faker::Name.name }
-    f.link { "https://www.google.de/#hl=de&output=search&sclient=psy-ab&q=#{@name}&oq=#{@name}"}
+    f.link { "http://#{Faker::Internet.domain_name}/#{@name}/show/me"}
     f.description { Faker::Lorem.sentence(rand(10)+4) }
-    f.category { Category.all.sample }
+    f.association :author, factory: :admin_user
+  end
+
+  factory :post_with_category, parent: :post do |f|
+    f.association :category, factory: :category
   end
 end

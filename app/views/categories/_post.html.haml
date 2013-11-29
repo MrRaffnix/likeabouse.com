@@ -4,6 +4,6 @@
     .name= link_to_post post
     .date= datetime_string(post.created_at)
   %hr
-  .post_body 
+  .post_body
     .description= post.description
-    .link= link_to_post_link post
+    .link= link_to_post_link post, :link, true

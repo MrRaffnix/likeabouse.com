@@ -2,12 +2,12 @@ class Category < ActiveRecord::Base
   attr_accessible :name, :description, :rank
   has_many :posts
 
-  validate :name, presence: true
-  validate :rank, presence: true, uniqueness: true
+  validates :name, presence: true
+  validates :rank, presence: true, uniqueness: true
 
-  scope :ordered, -> { order("rank ASC") }
-  scope :with_posts, -> { includes(:posts) }
-  scope :by_post, ->(post) { where(id: post.category_id) }
+  scope :ordered,     -> { order("rank ASC") }
+  scope :with_posts,  -> { includes(:posts) }
+  scope :by_post,     ->(post) { where(id: post.category_id) }
 
 
   def self.to_show

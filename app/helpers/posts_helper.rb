@@ -8,20 +8,23 @@ module PostsHelper
     link_to post.name, extended_post_path(post), class: "jq_open_post", remote: true
   end
 
-  def link_external_to_post(post)
-    link_to_blank post.name, post.link
-  end
-
   def extended_post_path(post)
     "#{post_path(post)}-#{post.name_to_path}"
   end
 
-  def exended_post_url(post)
+  def extended_post_url(post)
     "#{post_url(post)}-#{post.name_to_path}"
   end
 
-  def link_to_post_link(post, truncate = true)
-    link_text = truncate ? truncate_link(post.link) : post.link
+  def link_to_post_link(post, mode = :link, truncate = true)
+    link_text = case mode.to_sym
+    when :link
+      truncate ? truncate_link(post.link) : post.link
+    when :name
+      truncate ? truncate(post.name, length: 35) : post.name
+    else
+      post.name
+    end
 
     link_to_blank link_text, post.link
   end
@@ -46,16 +49,5 @@ module PostsHelper
 
   def post_to_json(post)
     post.as_json(only: [:id, :name]).to_json
-  end
-
-  def author_of_post(post)
-    author = post.author
-    if author.present?
-      if author.first_name.present?
-        author.first_name
-      else
-        author.email.gsub(/@.*/, "").titleize
-      end
-    end
   end
 end
