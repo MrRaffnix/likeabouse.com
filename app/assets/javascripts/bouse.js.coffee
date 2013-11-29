@@ -23,12 +23,3 @@ $ ->
       url = $(this).attr('action')+"?search="+$(this).find('input#search').val()
 
       history.pushState null, null, url
-  
-
-  # $(window).scroll ->
-  #   url = $('.pagination .next a').attr('href')
-  #   if url && $(window).scrollTop() > $(document).height() - $(window).height() - 50
-  #     $.get url, (data) ->
-  #       $('.pagination').remove()
-  #       $("#bodyer").append(data)
-  #       history.pushState null, null, url

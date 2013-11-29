@@ -52,6 +52,10 @@ group :development do
   gem 'bundler-audit'
   gem 'rails_best_practices'
   gem 'quiet_assets',         '1.0.2'
+
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'selenium-webdriver'
 end
 
 group :test do
