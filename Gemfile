@@ -28,8 +28,6 @@ end
 
 group :staging, :production do
   gem 'capistrano',             '3.0.1'
-  gem 'cape',                   '1.7.0'
-  gem 'capistrano-lazy-assets', '0.0.7'
   gem 'puma'
 end
 
