@@ -27,20 +27,17 @@ group :assets do
 end
 
 group :staging, :production do
-  gem 'capistrano',             '2.14.2'
-  gem 'capistrano-ext',         '1.2.1'
+  gem 'capistrano',             '3.0.1'
   gem 'cape',                   '1.7.0'
   gem 'capistrano-lazy-assets', '0.0.7'
-  gem 'rvm-capistrano',         '1.3.0'
-
-  gem 'unicorn',                '4.6.2'
-  gem 'capistrano-unicorn',     '0.1.10', require: false
+  gem 'puma'
 end
 
 group :development, :test do
   gem 'rspec-rails',        '2.13.0'
   gem 'factory_girl_rails', '4.2.1'
   gem 'ffaker',             '1.15.0'
+  gem 'sqlite3'
 end
 
 group :development do
