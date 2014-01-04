@@ -1,7 +1,7 @@
 set :application, 'likeabouse'
 set :repo_url, 'code@alpha.bashman.org:likeabouse.git'
 
-set :deploy_to, '/home/wopi/www/www.likeabouse.com'
+set :deploy_to, '/home/angelo/www/www.likeabouse.com'
 set :scm, :git
 
 set :format, :pretty

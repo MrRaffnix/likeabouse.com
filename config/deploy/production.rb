@@ -1,5 +1,7 @@
 set :stage, :production
 
-role :app, %w{wopi@alpha.bashman.org}
-role :web, %w{wopi@alpha.bashman.org}
-role :db,  %w{wopi@alpha.bashman.org}
+set :rbenv_ruby, "2.0.0-p0"
+
+role :app, %w{angelo@alpha.bashman.org}
+role :web, %w{angelo@alpha.bashman.org}
+role :db,  %w{angelo@alpha.bashman.org}
