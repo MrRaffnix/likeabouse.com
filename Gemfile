@@ -14,6 +14,7 @@ gem 'activeadmin',  '0.6.0'
 gem 'git',      '1.2.5'
 gem 'seed-fu',  '2.2.0'
 gem 'thin',     '1.5.1'
+gem 'puma',     '2.7.1'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -31,7 +32,6 @@ group :staging, :production do
   gem 'capistrano-rbenv', github: "capistrano/rbenv"
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
-  gem 'puma'
 end
 
 group :development, :test do
