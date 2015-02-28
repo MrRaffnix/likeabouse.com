@@ -1,5 +1,6 @@
 set :application, 'likeabouse'
-set :repo_url, 'code@alpha.bashman.org:likeabouse.git'
+set :repo_url, 'git@github.com:likeabouse/likeabouse.com.git'
+set :branch, 'server_migration'
 
 set :deploy_to, '/home/angelo/www/www.likeabouse.com'
 set :scm, :git
